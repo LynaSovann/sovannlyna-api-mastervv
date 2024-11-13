@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sovannlyna-api-mastervv
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/LynaSovann/sovannlyna-api-mastervv.git
+    targetRevision: main
+    path: manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: sovannlyna-api-mastervv
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  revisionHistoryLimit: 5
