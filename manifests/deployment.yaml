@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: sovannlyna-api-mastervv-container
-          image: pipejet/sovannlyna-api-mastervv:0
+          image: pipejet/sovannlyna-api-mastervv:1
           ports:
             - containerPort: 8080
